@@ -1,0 +1,34 @@
+{
+  "name": "elm-lsp",
+  "version": "1.0.0",
+  "description": "Linting through LSP protocol for Elm",
+  "main": "dist/lib/index.js",
+  "repository": "https://github.com/antew/elm-lsp.git",
+  "author": "Antew <antewcode@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "elm-lsp": "dist/lib/index.js"
+  },
+  "dependencies": {
+    "elm-analyse": "antew/elm-analyse#lsp-fix",
+    "file-uri-to-path": "^1.0.0",
+    "file-url": "^2.0.2",
+    "lodash": "^4.17.11",
+    "vscode-languageserver": "^5.3.0-next.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/express-ws": "^3.0.0",
+    "@types/file-url": "^2.0.0",
+    "@types/find": "^0.2.1",
+    "@types/fs-extra": "^5.0.5",
+    "@types/lodash": "^4.14.123",
+    "@types/minimist": "^1.2.0",
+    "@types/node": "^11.11.3",
+    "@types/opn": "^5.1.0",
+    "@types/os-homedir": "^1.0.0",
+    "@types/request": "^2.48.1",
+    "@types/ws": "^6.0.1",
+    "typescript": "^3.3.3333"
+  }
+}
