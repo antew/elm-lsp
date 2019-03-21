@@ -7,10 +7,11 @@ branches:
   only:
   - master
 
-install:
-  - npm install
+script:
+  - tsc
 
 cache:
+  yarn: true
   directories:
     - node_modules
     - elm-stuff
