@@ -44,6 +44,6 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/npm/v/elm-lsp.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/elm-lsp
-[npm-downloads]: https://img.shields.io/npm/antew/elm-lsp.svg?style=flat-square
+[npm-downloads]: https://img.shields.io/npm/dt/elm-lsp.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/antew/elm-lsp/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/antew/elm-lsp
