@@ -1,5 +1,5 @@
 # Elm LSP
-Combining existing Elm tooling in a language server.
+Language server for Elm with diagnostic support, built on [elm-analyse](https://github.com/stil4m/elm-analyse).
 
 Shown with ALE integration in Vim.
 ![screenshot](https://user-images.githubusercontent.com/1693421/54731367-46e90580-4b64-11e9-8759-69d0f881b866.png)
@@ -34,7 +34,7 @@ This project aims to become a full-fleged language server over time by building 
 
 ## Release History
 
-* 0.1.0
+* 1.0.0
     * Initial release with `elm-analyse` support
 
 ## Meta
