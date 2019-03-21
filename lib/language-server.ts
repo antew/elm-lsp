@@ -37,8 +37,8 @@ function start(project: {}) {
   let connection = createConnection(ProposedFeatures.all);
 
   run(project, function(elm: ElmApp) {
-    let report: Report | null = null;
     let documents: TextDocuments = new TextDocuments();
+    let filesWithDiagnostics = new Set();
 
     documents.listen(connection);
     connection.listen();
@@ -88,7 +88,16 @@ function start(project: {}) {
       // When publishing diagnostics it looks like you have to publish
       // for one URI at a time, so this groups all of the messages for
       // each file and sends them as a batch
-      _.forEach(_.groupBy(report.messages, "file"), (messages, file) => publishDiagnostics(messages, fileUrl(file)));
+      const messagesByFile = _.groupBy(report.messages, "file");
+      const filesInReport = new Set(_.map(_.keys(messagesByFile), fileUrl))
+      const filesThatAreNowFixed = new Set([...filesWithDiagnostics].filter(uriPath => !filesInReport.has(uriPath)))
+
+      filesWithDiagnostics = filesInReport;
+
+      // We you fix the last error in a file it no longer shows up in the report, but
+      // we still need to clear the error marker for it
+      filesThatAreNowFixed.forEach(file => publishDiagnostics([], file));
+      _.forEach(messagesByFile, (messages, file) => publishDiagnostics(messages, fileUrl(file)));
     });
 
     elm.ports.log.subscribe((data: LogMessage) => {
