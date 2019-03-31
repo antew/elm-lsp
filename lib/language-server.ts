@@ -12,12 +12,12 @@ import {
   TextDocuments,
   TextDocumentSyncKind
 } from "vscode-languageserver";
-import { Config, ElmApp, Info, Message, Report, LogMessage } from "../node_modules/elm-analyse/ts/domain";
-import * as fileLoadingPorts from "../node_modules/elm-analyse/ts/file-loading-ports";
-// import * as dependencies from '../node_modules/elm-analyse/ts/util/dependencies';
-import * as dependencies from "../node_modules/elm-analyse/ts/util/dependencies";
+import { Config, ElmApp, Info, Message, Report, LogMessage } from "elm-analyse/ts/domain";
+import * as fileLoadingPorts from "elm-analyse/ts/file-loading-ports";
+// import * as dependencies from 'elm-analyse/ts/util/dependencies';
+import * as dependencies from "elm-analyse/ts/util/dependencies";
 
-const { Elm } = require("../../node_modules/elm-analyse/dist/app/backend-elm.js");
+const { Elm } = require("elm-analyse/dist/app/backend-elm.js");
 
 // TODO: remove need for this config, the port, format, and open options
 // should not be needed.
