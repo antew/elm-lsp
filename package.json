@@ -6,6 +6,9 @@
   "repository": "https://github.com/antew/elm-lsp.git",
   "author": "Antew <antewcode@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "bin": {
     "elm-lsp": "dist/lib/index.js"
   },
