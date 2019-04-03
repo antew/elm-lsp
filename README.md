@@ -35,7 +35,8 @@ This project aims to become a full-fleged language server over time by building 
 |Find references|❌|
 
 ## Release History
-
+* 1.0.2
+    * Use package names rather than relative paths for dependencies (#1)
 * 1.0.1
     * Fix readme on npm
 * 1.0.0
