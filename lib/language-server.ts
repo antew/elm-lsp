@@ -12,7 +12,7 @@ import {
   TextDocuments,
   TextDocumentSyncKind
 } from "vscode-languageserver";
-import { Config, ElmApp, Info, Message, Report, LogMessage } from "elm-analyse/ts/domain";
+import { ElmApp, Message, LogMessage } from "elm-analyse/ts/domain";
 import * as fileLoadingPorts from "elm-analyse/ts/file-loading-ports";
 // import * as dependencies from 'elm-analyse/ts/util/dependencies';
 import * as dependencies from "elm-analyse/ts/util/dependencies";
@@ -89,8 +89,8 @@ function start(project: {}) {
       // for one URI at a time, so this groups all of the messages for
       // each file and sends them as a batch
       const messagesByFile = _.groupBy(report.messages, "file");
-      const filesInReport = new Set(_.map(_.keys(messagesByFile), fileUrl))
-      const filesThatAreNowFixed = new Set([...filesWithDiagnostics].filter(uriPath => !filesInReport.has(uriPath)))
+      const filesInReport = new Set(_.map(_.keys(messagesByFile), fileUrl));
+      const filesThatAreNowFixed = new Set([...filesWithDiagnostics].filter(uriPath => !filesInReport.has(uriPath)));
 
       filesWithDiagnostics = filesInReport;
 

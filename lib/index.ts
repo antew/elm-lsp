@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 
-import LSPServer from './language-server';
-import * as fs from 'fs';
+import LSPServer from "./language-server";
+import * as fs from "fs";
+import findUp from "find-up";
+import * as path from "path";
 
-const packageFileExists = fs.existsSync('./elm.json');
-if (!packageFileExists) {
-    console.log('There is no elm.json file in this directory. elm-lsp will only work in directories where such a file is located.');
-    process.exit(1);
+const packageFilePath = findUp.sync("elm.json");
+if (packageFilePath === null) {
+  console.log("Unable to find an elm.json file, elm-lsp will be disabled.");
+  throw new Error("Unable to find elm.json");
 }
 
-const projectFile = JSON.parse(fs.readFileSync('./elm.json').toString());
+const projectFile = JSON.parse(fs.readFileSync(packageFilePath).toString());
+const dirname = path.dirname(packageFilePath);
+process.chdir(dirname);
 
 LSPServer.start(projectFile);
