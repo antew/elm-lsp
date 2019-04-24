@@ -1,6 +1,6 @@
 {
   "name": "elm-lsp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Linting through LSP protocol for Elm",
   "main": "dist/lib/index.js",
   "repository": "https://github.com/antew/elm-lsp.git",
