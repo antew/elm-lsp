@@ -1,6 +1,10 @@
 # Elm LSP
 Language server for Elm with diagnostic support, built on [elm-analyse](https://github.com/stil4m/elm-analyse).
 
+## Deprecated as of 2019-06-01
+
+I recommend using [elm-language-server](https://github.com/elm-tooling/elm-language-server) instead, it includes everything in this repo along with additional features like finding all references, jumping to definitions, and more.
+
 Shown with ALE integration in Vim.
 
 ![screenshot](https://user-images.githubusercontent.com/1693421/54731367-46e90580-4b64-11e9-8759-69d0f881b866.png)
